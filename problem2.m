@@ -113,3 +113,12 @@ set(gca,'FontSize',18)
 set(gcf,'outerposition',get(0,'screensize'));
 saveas(gcf,'2_2.png')
 close
+
+f_quad=inline('quad(@(x)1/sqrt(2*pi)*exp(-0.5*x.^2),-100,x,1e-9)','x');
+f_normcdf=inline('normcdf(x)','x')
+tic
+maketable(f_quad,5);
+toc
+tic
+maketable(f_normcdf,5);
+toc
