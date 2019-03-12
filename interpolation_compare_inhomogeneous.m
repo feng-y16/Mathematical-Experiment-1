@@ -1,10 +1,10 @@
-function [] = interpolation_compare_inhomogeneous(f,low,high,x)
+function [] = interpolation_compare_inhomogeneous(f,low,high,x,extension_range)
 num_of_points=length(x);
 y=zeros(num_of_points,1);
 for i=1:1:num_of_points
     y(i)=f(x(i));
 end
-p=linspace(low-2,high+2,20*num_of_points);
+p=linspace(low-extension_range,high+extension_range,20*num_of_points);
 y_p=zeros(20*num_of_points,1);
 for i=1:1:20*num_of_points
     y_p(i)=f(p(i));%为y=f(x)的图像提供数据

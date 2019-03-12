@@ -122,3 +122,19 @@ toc
 tic
 maketable(f_normcdf,5);
 toc
+
+tic
+for i=-10:1:10
+    temp=normcdf(0.1*i);
+end
+toc
+tic
+for i=-10:1:10
+    Phi_linear(0.1*i,x,y1,error1);
+end
+toc
+tic
+for i=-10:1:10
+    Phi_linear(0.1*i,x,y2,error2);
+end
+toc
